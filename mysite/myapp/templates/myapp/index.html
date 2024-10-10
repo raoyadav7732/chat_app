@@ -1,0 +1,18 @@
+{% extends 'myapp/base.html' %}
+
+{% block body %}
+<main class="container mx-auto p-8">
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">List of Chat Rooms</h1>
+        <ul class="list-none">
+            {% for room in chatrooms %}
+            <li class="mb-4">
+                <a href="{% url 'chatroom' room.slug %}" class="text-lg text-blue-500 font-semibold hover:underline">
+                    {{ room.name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</main>
+{% endblock %}
